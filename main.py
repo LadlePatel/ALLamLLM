@@ -23,7 +23,7 @@ app = FastAPI(title="ALLaM Chatbot API", version="1.0.0")
 # CORS middleware for React/Next.js frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001", "https://your-frontend-domain.com"],  # Add your frontend URLs
+    allow_origins=["*"],  # Add your frontend URLs
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
