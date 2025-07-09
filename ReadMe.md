@@ -52,7 +52,12 @@ pip install torch transformers fastapi uvicorn langchain langchain-community sen
 ```
 
 ### D. Download the ALLaM LLM Model
-    When You run the script it automatically download the Model
+     **(Recommended)** Log in to HuggingFace and download:
+
+    ```bash
+    huggingface-cli download ALLaM-AI/ALLaM-7B-Instruct-preview --local-dir allam-model --local-dir-use-symlinks False
+    ```
+
 ---
 
 ### E. Start Redis Server
@@ -109,6 +114,7 @@ source allamllm-env/bin/activate
 pip install --upgrade pip
 pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 sentence-transformers huggingface_hub python-multipart
 redis-server
+huggingface-cli download ALLaM-AI/ALLaM-7B-Instruct-preview --local-dir allam-model --local-dir-use-symlinks False
 uvicorn main:app --reload
 ```
 
