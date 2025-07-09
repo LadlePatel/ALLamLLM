@@ -48,20 +48,11 @@ pip install --upgrade pip
 ### C. Install Python Dependencies
 
 ```bash
-pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 accelerate sentence-transformers huggingface_hub
+pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 accelerate sentence-transformers huggingface_hub python-multipart
 ```
 
 ### D. Download the ALLaM LLM Model
-
-1. **(Recommended)** Log in to HuggingFace and download:
-
-    ```bash
-    huggingface-cli login   # Only needed the first time
-    huggingface-cli download ALLaM-AI/ALLaM-7B-Instruct-preview --local-dir allam-model --local-dir-use-symlinks False
-    ```
-
-2. Or, download and unzip the model files manually into `./allam-model`.
-
+    When You run the script it automatically download the Model
 ---
 
 ### E. Start Redis Server
@@ -116,9 +107,7 @@ sudo apt install python3 python3-venv python3-pip redis-server -y
 python3 -m venv allamllm-env
 source allamllm-env/bin/activate
 pip install --upgrade pip
-pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 sentence-transformers huggingface_hub
-huggingface-cli login   # if needed
-huggingface-cli download ALLaM-AI/ALLaM-7B-Instruct-preview --local-dir allam-model --local-dir-use-symlinks False
+pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 sentence-transformers huggingface_hub python-multipart
 redis-server
 uvicorn main:app --reload
 ```
