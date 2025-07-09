@@ -108,6 +108,9 @@ Copy-paste to go from zero to ready in minutes:
 
 ```bash
 sudo apt update
+sudo apt install git
+git clone https://github.com/LadlePatel/ALLamLLM.git
+cd ALLamLLM
 sudo apt install python3 python3-venv python3-pip redis-server -y
 python3 -m venv allamllm-env
 source allamllm-env/bin/activate
