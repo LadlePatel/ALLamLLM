@@ -48,7 +48,7 @@ pip install --upgrade pip
 ### C. Install Python Dependencies
 
 ```bash
-pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 accelerate sentence-transformers huggingface_hub python-multipart
+pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 accelerate sentence-transformers huggingface_hub python-multipart accelerate
 ```
 
 ### D. Download the ALLaM LLM Model
@@ -79,7 +79,7 @@ redis-server
 ### G. Run the FastAPI Application
 
 ```bash
-uvicorn main:app --reload
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
 - The API documentation will be available at: [http://localhost:8000/docs](http://localhost:8000/docs)
@@ -115,10 +115,10 @@ sudo apt install python3 python3-venv python3-pip redis-server -y
 python3 -m venv allamllm-env
 source allamllm-env/bin/activate
 pip install --upgrade pip
-pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 sentence-transformers huggingface_hub python-multipart
+pip install torch transformers fastapi uvicorn langchain langchain-community sentencepiece redis tiktoken chromadb fpdf PyPDF2 sentence-transformers huggingface_hub python-multipart accelerate
 redis-server
 huggingface-cli download ALLaM-AI/ALLaM-7B-Instruct-preview --local-dir allam-model --local-dir-use-symlinks False
-uvicorn main:app --reload
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
 ---
