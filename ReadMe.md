@@ -31,6 +31,9 @@ A robust, private FastAPI-powered chatbot for Arabic and English, powered by ALL
 
 ```bash
 sudo apt update
+sudo apt install git
+git clone https://github.com/LadlePatel/ALLamLLM.git
+cd ALLamLLM
 sudo apt install python3 python3-venv python3-pip redis-server -y
 ```
 
